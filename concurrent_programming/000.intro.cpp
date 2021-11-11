@@ -2,7 +2,7 @@
 #include <thread>
 
 void thread1() {
-	std::cout << "Helldo, Worlds" << std::endl;
+	std::cout << "Hello, World" << std::endl;
 }
 
 int main() {
