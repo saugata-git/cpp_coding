@@ -11,14 +11,14 @@ void  sheared_print(std::string msg, int id){
    // mu.unlock();
 }
 void thread1() {
-	for(int i = 0; i >-100; i--)
+    for(int i = 0; i >-100; i--)
     {
         sheared_print(std::string("From t1: "), i);
     }
 }
 
 int main() {
-  	std::thread t1(thread1);  //t1 starts running 
+    std::thread t1(thread1);  //t1 starts running 
     try
     {
         for(int i = 0; i < 100; i++)
@@ -66,7 +66,7 @@ public:
 };
 
 void function_1(LogFile& log) {
-	for(int i = 0; i >-100; i--)
+    for(int i = 0; i >-100; i--)
     {
         log.sheared_print(std::string("From t1: "), i);
     }
@@ -74,7 +74,7 @@ void function_1(LogFile& log) {
 
 int main() {
     LogFile log;
-	  std::thread t1(function_1,std::ref(log));  //t1 starts running 
+    std::thread t1(function_1,std::ref(log));  //t1 starts running 
     try
     {
         for(int i = 0; i < 100; i++)
