@@ -56,6 +56,13 @@ public:
         std::lock_guard<std::mutex> locker(mu);   
         f << msg << id <<std::endl;
     }
+    //Never do 
+    //do not return f to ouside world
+    /*
+    std::ofstream& getStream(){
+       return f;
+    }
+    */	
 };
 
 void function_1(LogFile& log) {
