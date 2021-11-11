@@ -1,17 +1,23 @@
 #include<iostream>
 #include <thread>
 
-void function_1(){
-    std::cout<< "I am in function_1" << std::endl;
+void thread1() {
+	std::cout << "Helldo, Worlds" << std::endl;
 }
 
-int main(){
-   std::thread t1(function_1);   //t1 starts running
-   //t1.join();   // main thread waits for t1 to finish
-   t1.detach();    // t1 will run freely of its own --deamon thread
+int main() {
+	std::thread t1(thread1);
+	t1.join();   // main thread wait for t1 to finish
+	//t1.detach();  // main thread let t1 to run on its own: t1 is a daemon process.
+                   // C++ runtime library is responsible returning t1's resources
+                   // and main thread may finish before t2 prints "Hello"
 
    if(t1.joinable()){
        t1.join();
    }
    return 0;
 }
+// If neither detach nor join is called, terminate() will be called for the t1.
+// A thread can only be joined once or detached once. After it is joined on detached
+// it becomes unjoinable ( t.joinable() returns false )
+
