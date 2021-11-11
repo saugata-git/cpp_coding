@@ -2,16 +2,15 @@
 #include <thread>
 
 void thread1() {
-	std::cout << "Hello, World" << std::endl;
+    std::cout << "Hello, World" << std::endl;
 }
 
 int main() {
-	std::thread t1(thread1);
-	t1.join();   // main thread wait for t1 to finish
-	//t1.detach();  // main thread let t1 to run on its own: t1 is a daemon process.
+   std::thread t1(thread1);
+   t1.join();      // main thread wait for t1 to finish
+   //t1.detach();  // main thread let t1 to run on its own: t1 is a daemon process.
                    // C++ runtime library is responsible returning t1's resources
                    // and main thread may finish before t2 prints "Hello"
-
    if(t1.joinable()){
        t1.join();
    }
