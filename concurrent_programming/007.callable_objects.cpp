@@ -20,7 +20,7 @@ int main() {
     A a;
     std::thread t1(a, 6);              // copy of a() in diffrent thread
     std::thread t2(std::ref(a), 6);    // a() in diffrent thread
-    std::thread t8(std::move(a), 6);   // a is no longer usable in parent thered
+    std::thread t3(std::move(a), 6);   // a is no longer usable in parent thered
     std::thread t4([](int x){return x*x;}, 6);
     std::thread t5(foo, 7);
 
