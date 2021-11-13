@@ -2,11 +2,11 @@
 #include <thread>
 
 void thread1() {
-	std::cout << "Hello, World" << std::endl;
+    std::cout << "Hello, World" << std::endl;
 }
 
 int main() {
-	std::thread t1(thread1);  //t1 starts running 
+    std::thread t1(thread1);  //t1 starts running 
     try
     {
         for(int i = 0; i < 100; i++)
@@ -36,7 +36,7 @@ public:
 };
 
 int main() {
-	  //Functor fct;
+    //Functor fct;
     //std::thread t1(fct);
     std::thread t1((Functor()));
     //using RAII
@@ -86,16 +86,16 @@ public:
 };
 
 int main() {
-    std::string s = "No trust,no love";
-    std::cout<< std::this_thread::get_id() <<std::endl;
+     std::string s = "No trust,no love";
+     std::cout<< std::this_thread::get_id() <<std::endl;
 
-    std::thread t1((Functor()), std::move(s));    // move semantics avoid copying 
-    std::cout<< t1.get_id() <<std::endl;
+     std::thread t1((Functor()), std::move(s));    // move semantics avoid copying 
+     std::cout<< t1.get_id() <<std::endl;
 
-    std::thread t2 = std::move(t1);          
-    t2.join();
+     std::thread t2 = std::move(t1);          
+     t2.join();
     
-    return 0;
+     return 0;
 }
 
 /*--------------------------------------------------------*/
