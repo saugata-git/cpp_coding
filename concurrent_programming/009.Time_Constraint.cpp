@@ -33,7 +33,7 @@ int main() {
    ulocker.try_lock_for(chrono::nanoseconds(500));
    ulocker.try_lock_until(tp);
 
-   /* Condition Varivale */
+   /* Condition Variable */
    std::condition_variable cond;
    cond.wait_for(ulocker, std::chrono::microseconds(2));
    cond.wait_until(ulocker, tp);
