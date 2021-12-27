@@ -211,8 +211,14 @@ class dog {
 
 //Limitation: dog() has to be called first.
 
+//C++ 11:
+class dog {
+    public:
+    dog() { ... }
+    dog(int a) : dog() { doOtherThings(); }
+}
 
-
+//Limitation: dog() has to be called first.
 
 
 
