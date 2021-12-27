@@ -113,6 +113,38 @@ constexpr int cubed(int x){
 int y = cubed(1789); //computed at compile time
 
 
+/**
+ * @brief  New String Literals
+ * 
+*/
+
+// C++ 03:
+char* a = "string";
+
+// C++ 11:
+char* a = u8"string";     //to define an UTF-8 string.
+char16_t* b = u"string";  //to define UTF-16 string.
+char32_t* c = U"string";  //to define UTF-32 string.
+char* d = R"string \\"    //to define raw string.
+
+
+/**
+ * @brief  lambda function
+ * 
+ */
+
+std::cout << [](int x,int y){ return x+y; }(3,4) << std::endl;     //output : 7
+auto f = [](int x,int y){ return x+y;}
+std::cout<< f(3,4) << std::endl;     //output : 7
+
+template<typename func>
+void filter(func f, std::vector<int> arr) {
+    for(auto i : arr){
+        if(f(i)){
+            std::cout<< i <<std::endl;
+        }
+    }
+}
 
 
 
