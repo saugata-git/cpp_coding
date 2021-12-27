@@ -102,9 +102,30 @@ for(int i : v) {    //works on any class that has begin() and end()
 } 
 
 for(auto& i: v){
-     i++;           //chnages the values in v 
+     i++;           //changes the values in v 
 }
 
+
+/**
+ * @brief nullptr
+ * 
+ *  To replace NULL=0 in C++ 03
+ */
+
+void foo(int i) {
+    std::cout << "foo_int" <<std::endl;
+}
+
+void foo(char* pc){
+    std::cout << "foo_char*" <<std::endl;
+}
+
+int main() {
+    foo(NULL); //Ambiguity
+
+    //C++ 11
+    foo(nullptr); //call foo(char*)
+}
 
 
 
