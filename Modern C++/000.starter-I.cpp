@@ -86,26 +86,26 @@ auto a = 6;       // integer
 auto b = 9.6;     // double
 auto c = a;       // integer
 
-
-
 /**
  * @brief for each
  * 
  */
 
 //C++ 03:
-   for (std::vector<int>::iterator itr=v.begin(); itr!=v.end(); ++itr) {
-       cout<< (*itr);
-   }
+ for (std::vector<int>::iterator itr=v.begin(); itr!=v.end(); ++itr) {
+     std::cout<< (*itr);
+ }
 
 //C++ 11:
-    for(int i : v) {    //works on any class that has begin() and end()
-       cout<< i;     //randomly  access
-    } 
+for(int i : v) {    //works on any class that has begin() and end()
+     std::cout<< i;     //randomly  access
+} 
 
-    for(auto& i: v){
-       i++;           //chnages the values in v 
-    }
+for(auto& i: v){
+     i++;           //chnages the values in v 
+}
+
+
 
 
 
