@@ -21,7 +21,7 @@ class yellowdog : public dog {
 
 //will  not help in polymorphism
 
-//C++
+//C++ 11
 class dog {
     virtual void A(int);
     virtual void B() const;
