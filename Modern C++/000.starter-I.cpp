@@ -52,6 +52,60 @@ dog d1 = {5, "Henry"};
 *  3.Aggregate initializer
 */
 
+dog d1{3};
+
+class dog{
+    public:
+    int age;        //3rd choice
+    
+    dog(int a) {
+        age = a;     //2nd choice
+    }
+    
+    dog(const initialier_list<int>& vec){   //1st choice
+        age  = *(vec.begin());
+    }
+};
+
+
+/**
+ * @brief  auto type
+ * 
+ */
+
+// c++ 03 
+for (std::vector<int>::iterator it = vec.begin(); it!=vec.end(); ++it) {
+    m_vec.push_back(*it);
+}
+
+// c++ 11: use auto type
+for (auto it = vec.begin(); it!=vec.end(); ++it) {
+    m_vec.push_back(*it);
+}
+auto a = 6;       // integer
+auto b = 9.6;     // double
+auto c = a;       // integer
+
+
+
+/**
+ * @brief for each
+ * 
+ */
+
+//C++ 03:
+   for (std::vector<int>::iterator itr=v.begin(); itr!=v.end(); ++itr) {
+       cout<< (*itr);
+   }
+
+//C++ 11:
+    for(int i : v) {    //works on any class that has begin() and end()
+       cout<< i;     //randomly  access
+    } 
+
+    for(auto& i: v){
+       i++;           //chnages the values in v 
+    }
 
 
 
