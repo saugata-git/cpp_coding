@@ -64,6 +64,29 @@ class dog {
     dog(int age);
     dog() = default;   //Force compiler to generate the default constructor
 }
+/**
+ * @brief delete keyword
+ * 
+ */
+
+class dog {
+    dog(int age) {}
+}
+
+dog a(2);
+dog b(3.0);  // 3.0 is converted from double to int
+a = b;       // Compiler generated assignment operator will work
+
+//C++ 11:
+class dog {
+    dog(int age) {}
+    dog(double ) = delete;
+    dog& operator=(const dog&) = delete;
+}
+
+dog a(2);
+dog b(3.0);  // compile time error
+a = b;       // Compile time error
 
 
 
