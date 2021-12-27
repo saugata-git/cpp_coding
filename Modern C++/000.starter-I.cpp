@@ -197,7 +197,19 @@ class dog {
    dog(int a){ init(); doOtherThings(); }
 };
 
+/* Cons:
+* 1.Cumbersome code.
+* 2.init() could be invoked by other functions.
+*/
 
+//C++ 11:
+class dog {
+    public:
+    dog() { ... }
+    dog(int a) : dog() { doOtherThings(); }
+}
+
+//Limitation: dog() has to be called first.
 
 
 
