@@ -89,4 +89,31 @@ dog b(3.0);  // compile time error
 a = b;       // Compile time error
 
 
+/**
+ * @brief  constexpr
+ * 
+ */
+
+int arr[6]; //OK
+
+int A() { return 3;}
+int arr[A()+3];     // Compile Error
+
+//C++ 11
+constexpr int A() { return 3};   // Forces the computation
+                                 // to happen at compile time
+int arr[A()+3];     // Create an array of size 6         
+
+//Write faster program with constexpr
+
+constexpr int cubed(int x){
+    return x*x*x;
+}
+
+int y = cubed(1789); //computed at compile time
+
+
+
+
+
 
