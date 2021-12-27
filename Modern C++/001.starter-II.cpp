@@ -8,7 +8,6 @@
  */
 
 // C++ 03
-
 class dog {
     virtual void A(int);
     virtual void B() const;
@@ -18,8 +17,8 @@ class yellowdog : public dog {
     virtual void A(float); //Created a new function      // will not override missed data type
     virtual void B(); //Created a new function           // will not override  missed  const
 } 
-
 //will  not help in polymorphism
+
 
 //C++ 11
 class dog {
