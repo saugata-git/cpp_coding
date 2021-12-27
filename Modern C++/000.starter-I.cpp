@@ -164,6 +164,42 @@ else{
 //Compile fails because we have not define == (apple,orange) [equal operator]
 
 
+/**
+ * @brief static_assert
+ * 
+ */
+
+//run-time asssert
+   assert(myPointer!= NULL);
+
+//Compile time assert (C++ 11)
+   static_assert(sizeof(int) == 4)
+
+
+/**
+ * @brief Delegating Constructor
+ * 
+ */
+
+
+//can only work in JAVA not in C++ 
+class dog {
+    public: 
+      dog() { ... }                            //invoke 2 dogs
+      dog(int a) { dog(); doOtherThings(a);}
+};
+
+// C++ 03:
+class dog {
+   init() { ... };
+   public:
+   dog() { init(); }
+   dog(int a){ init(); doOtherThings(); }
+};
+
+
+
+
 
 
 
