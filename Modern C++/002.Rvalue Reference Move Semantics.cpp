@@ -141,7 +141,14 @@ bool goo(std::vector<int>& arg); // pass by reference if you
 
 
 
-
+/**
+ * Move Constructor/Move Assignment Operator :
+ *    Purpose: conveniently avoid costly and unnecessary deep copying
+ *       1. They are particularly powerful where passing by reference and 
+ *          passing by value are both used.
+ *       2. They give you finer control of which part of your object 
+ *          to be moved.
+ */
 
 
 
