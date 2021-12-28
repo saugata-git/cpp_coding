@@ -67,3 +67,24 @@ void relay(T&& arg) {
 }
 
 //*Note: this will work because type T is a template type.
+
+
+
+
+/**
+ *  Reference Collapsing Rules (C++ 11 ):
+ *  1. T& &   ==> T&
+ *  2. T& &&  ==> T&
+ *  3. T&& &  ==> T&
+ *  4. T&& && ==> T&&
+ */
+
+
+template< class T>
+struct remove_reference;     //it  removes reference on type T
+
+//T is int&
+remove_reference<int&>::type i;  //int i;
+
+//T is int
+remove_reference<int>::type i;  //int i;
