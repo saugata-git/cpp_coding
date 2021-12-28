@@ -7,7 +7,6 @@
 // 2. Perfect Forwarding
 // Prerequisite: undersatnding of rvalue and lvalue
 
-
 /**
  * @brief  Moving Semantics
  * 
@@ -31,11 +30,6 @@ int main(){
     printInt(6);  // call printInt(int&& i)
 
 }
-
-
-
-
-
 
 /**
  * @brief  Moving Semantics
@@ -65,7 +59,6 @@ class Vector{
 void foo(Vector v);
 
 Vector createVector();
-
 
 int main(){
     Vector reusable = createVector();
