@@ -116,9 +116,12 @@ int main(){
     // reusable is destoyed here dont use it as   rhs.arr_ = nullptr;
 }
 
-
-
-
+/**
+ * Note 1: the most useful place for rvalue reference is overloading 
+ * copy constuctor and copy assignment operator, to achieve move semantics.
+ */
+X& X::operator=(X const &rhs);
+X& X::operator=(X&& rhs);
 
 
 
