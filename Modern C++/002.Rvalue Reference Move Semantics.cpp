@@ -31,3 +31,60 @@ int main(){
     printInt(6);  // call printInt(int&& i)
 
 }
+
+
+
+
+
+
+/**
+ * @brief  Moving Semantics
+ * 
+ */
+
+class Vector{
+    int size;
+    double* arr_;
+   public:
+       Vector( const Vector& rhs) {   //Copy constructor  (deep copy)
+            size = rhs.size;
+            arr_ = new double[size];
+            for( int i=0; i<size; i++){
+                arr_[i] = rhs.arr_[i];
+            }
+       }
+
+       Vector( Vector&& rhs) {   //Move constructor  (shallow copy)
+            size = rhs.size;
+            arr_ = rhs.arr_;
+            rhs.arr_ = nullptr;
+       } 
+      ~Vector() { delete arr_; }
+};
+
+void foo(Vector v);
+
+Vector createVector();
+
+
+int main(){
+    Vector reusable = createVector();
+    foo(reusable);    // calls Copy Constructor
+
+    foo(createVector());    // calls Move Constructor
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
