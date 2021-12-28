@@ -75,7 +75,21 @@ int main(){
 
 }
 
+/*
+if not move constructor 
 
+void foo_by_value(Vector v);
+void foo_by_ref(Vector& v);
+
+Vector createVector();
+
+int main(){
+    Vector reusable = createVector();
+    foo_by_value(reusable);    
+    foo_by_ref(createVector());   
+
+}
+*/
 
 
 
