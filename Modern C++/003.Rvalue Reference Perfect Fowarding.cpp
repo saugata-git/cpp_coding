@@ -90,7 +90,7 @@ remove_reference<int>::type i;  //int i;
 
 
 template< typename T>
-void relay(T&& arg) {
+void relay(T&& arg) {       // universal reference accoding 
    ...
 }
 
