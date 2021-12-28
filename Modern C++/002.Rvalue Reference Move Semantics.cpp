@@ -85,6 +85,42 @@ int main(){
 */
 
 
+class Vector{
+    int size;
+    double* arr_;
+   public:
+       Vector( const Vector& rhs) {   //Copy constructor  (deep copy)
+            size = rhs.size;
+            arr_ = new double[size];
+            for( int i=0; i<size; i++){
+                arr_[i] = rhs.arr_[i];
+            }
+       }
+
+       Vector( Vector&& rhs) {   //Move constructor  (shallow copy)
+            size = rhs.size;
+            arr_ = rhs.arr_;
+            rhs.arr_ = nullptr;
+       } 
+      ~Vector() { delete arr_; }
+};
+
+void foo(Vector v);
+void foo_by_ref(Vector& v);
+
+Vector createVector();
+
+
+int main(){
+    Vector reusable = createVector();
+    foo_by_ref(reusable);  //  call no constuctor    most efficient         
+    foo(reusable);   // call copy constructor          least efficient        
+    foo(std::move(reusable)); // call move constructor   2nd most efficient        
+    // reusable is destoyed here dont use it as   rhs.arr_ = nullptr;
+}
+
+
+
 
 
 
