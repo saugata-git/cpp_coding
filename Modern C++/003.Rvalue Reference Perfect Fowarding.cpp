@@ -125,6 +125,9 @@ T&& forward(typename remove_refernce<T>:: type& arg) {
     return static_cast<T&&> (arg);
 } 
      
+// std::move() vs std::forward()
+std::move<T>(arg); //Turn arg into an rvalue  type
+std::forward<T>(arg); //Turn arg to type of T&&
      
      
      
