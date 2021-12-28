@@ -124,6 +124,22 @@ X& X::operator=(X const &rhs);
 X& X::operator=(X&& rhs);
 
 
+/**
+ * Note 2: Move semantics is implemented for all STL containers,which means :
+ *  a. Move to C++11,Your code will be faster withour chnaging anything.
+ *  b.Passing-byvalue can be used for STL containers.
+ */
+
+std::vector<int> foo() {
+    //.... 
+    return myvector; 
+}
+
+void hoo(std::string s);
+bool goo(std::vector<int>& arg); // pass by reference if you  
+                                 // use arg to carry data back from goo()
+
+
 
 
 
