@@ -116,7 +116,26 @@ void relay(T&& arg) {       // universal reference
  *          -T is a function template type, not a class template.
  */     
      
-     
+ 
+
+/**
+ *   T&& is Universal Reference : rvalue, lvalue , const , non const etc.
+ *   But 2 condtions need to be made:
+ *      1. T is a template type.
+ *      2. Type deduction (reference collasping ) happens to T.
+ *          -T is a function template type, not a class template.
+ */
+
+template< typename T>
+void relay(T&& arg) {
+    foo(std::forward<T>(arg));
+}
+
+//Implementation of std::forward()   casts the argument as per the relay function
+template<class T>
+T&& forward(typename remove_refernce<T>:: type& arg) {
+    return static_cast<T&&> (arg);
+} 
      
      
      
