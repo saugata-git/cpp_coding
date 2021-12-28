@@ -68,9 +68,6 @@ void relay(T&& arg) {
 
 //*Note: this will work because type T is a template type.
 
-
-
-
 /**
  *  Reference Collapsing Rules (C++ 11 ):
  *  1. T& &   ==> T&
@@ -88,3 +85,24 @@ remove_reference<int&>::type i;  //int i;
 
 //T is int
 remove_reference<int>::type i;  //int i;
+
+
+
+
+template< typename T>
+void relay(T&& arg) {
+   ...
+}
+
+/**
+ *  rvalue reference is specified with type&& .
+ * 
+ *  type&& is always rvalue reference ? -> No
+ */
+
+// T&& variable is initialized with rvalue =>  rvalue reference 
+ relay(9); => T = int&& => T&& = int&& && = int&&
+
+// T&& variable is initialized with lvalue =>  lvalue reference 
+ relay(9); => T = int& => T&& = int& && = int&
+
