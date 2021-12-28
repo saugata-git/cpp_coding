@@ -1,1 +1,69 @@
+#include <iostream>
+#include<iterator>
+#include <vector>
 
+// C++ 11 : Rvalue Reference
+// 1. Moving Semantics
+// 2. Perfect Forwarding
+// Prerequisite: undersatnding of rvalue and lvalue
+
+
+/**
+ * @brief Perfect Forwarding
+ * 
+ */
+
+class Vector{
+    int size;
+    double* arr_;
+   public:
+       Vector( const Vector& rhs) {   //Copy constructor  (deep copy)
+            size = rhs.size;
+            arr_ = new double[size];
+            for( int i=0; i<size; i++){
+                arr_[i] = rhs.arr_[i];
+            }
+       }
+
+       Vector( Vector&& rhs) {   //Move constructor  (shallow copy)
+            size = rhs.size;
+            arr_ = rhs.arr_;
+            rhs.arr_ = nullptr;
+       } 
+      ~Vector() { delete arr_; }
+};
+
+void foo(Vector v);     // Vector has both move constructor and copy constructor
+Vector createVector();
+
+
+// this kind of template will not forward perfectly  to foo.
+template< typename T>
+void relay(T arg) {
+    foo(arg);
+}
+
+
+int main(){
+    Vector reusable = createVector();
+    foo(reusable);    // calls Copy Constructor
+
+    ...
+    foo(createVector());    // calls Move Constructor
+    return 0;
+}
+
+/**
+ *  1. No costly and unnecessary copy construction of Vector is made.
+ *  2. ravlue is forwarded as rvalue, and lvalue is forwarded as lavlue.
+ */
+
+
+
+// Solution:
+template< typename T>
+void relay(T&& arg) {
+    foo(std::forward<T>(arg));
+}
+
+//*Note: this will work because type T is a template type.
