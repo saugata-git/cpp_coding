@@ -84,7 +84,6 @@ int main(){
 }
 */
 
-
 class Vector{
     int size;
     double* arr_;
@@ -107,9 +106,7 @@ class Vector{
 
 void foo(Vector v);
 void foo_by_ref(Vector& v);
-
 Vector createVector();
-
 
 int main(){
     Vector reusable = createVector();
