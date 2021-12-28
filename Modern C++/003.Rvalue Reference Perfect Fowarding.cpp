@@ -90,7 +90,7 @@ remove_reference<int>::type i;  //int i;
 
 
 template< typename T>
-void relay(T&& arg) {       // universal reference accoding 
+void relay(T&& arg) {       // universal reference
    ...
 }
 
@@ -106,3 +106,23 @@ void relay(T&& arg) {       // universal reference accoding
 // T&& variable is initialized with lvalue =>  lvalue reference 
  relay(9); => T = int& => T&& = int& && = int&
 
+     
+     
+/**
+ *   T&& is Universal Reference : rvalue, lvalue , const , non const etc.
+ *   But 2 condtions need to be made:
+ *      1. T is a template type.
+ *      2. Type deduction (reference collasping ) happens to T.
+ *          -T is a function template type, not a class template.
+ */     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
