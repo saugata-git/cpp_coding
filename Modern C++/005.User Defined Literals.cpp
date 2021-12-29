@@ -55,5 +55,27 @@ int main(){
    cout<< (170.0_mm/17.0_m) << endl;
 }
 
+/*-------------------------------------------------------------------------------*/
 
+/**
+ * @brief User defined Literals
+ */
+
+// Example:
+int operator"" _bin(const char* str , size_t l){
+   int ret = 0;
+   for(int i=0 ; i<l ; i++){
+      ret = ret << 1 ;
+      if(str[i] == '1'){
+          ret += 1; 
+      } 
+   }
+   return ret;
+}
+
+int main(){
+   cout << "110"_bin << endl;
+   cout << "110000111010101001"_bin << endl;
+   cout << "1111111"_bin << endl;
+}
 
