@@ -79,3 +79,18 @@ int main(){
    cout << "1111111"_bin << endl;
 }
 
+/*------------------------------------------------------------------------------*/
+
+
+/* Restriction: it can only work with following  parameters.
+   char const*
+   unsigned long long 
+   long double
+   char const* , std::size_t
+   wchar const* , std::size_t 
+   char16_t const* , std::size_t
+   char32_t const* , std::size_t
+Note: return value can be of any types. */
+
+
+
