@@ -67,6 +67,7 @@ class Fish {
 // gererate -> 1,2,3
 
 class Cow{
-    Cow& operator=(const Cow&) = delete; 
+    Cow& operator=(const Cow&) = delete;
+   // Cow(const Cow&) = default;   // resolution of deprication.
 };
-// gererate -> 1,2,4
+// gererate -> 1,2,4 (2 is depricated)
