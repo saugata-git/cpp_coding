@@ -67,4 +67,7 @@ class Fish {
 };
 // gererate -> 1,2,3
 
-
+class Cow{
+    Cow& operator=(const Cow&) = delete; 
+};
+// gererate -> 1,2,4
