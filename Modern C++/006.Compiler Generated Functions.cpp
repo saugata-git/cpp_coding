@@ -43,7 +43,7 @@ class Dog {};
 // gererate -> 1,2,3,4,5,6
 
 //example 1
-class Cat {
+class Cat {        // (3 is depricated)
     Cat(const Cat&) {} //copy constructor
 };
 // gererate -> 3,4
@@ -61,7 +61,7 @@ class Frog {
     Frog(const Frog&, int=0) {} //copy constuctor
 };
 
-class Fish {
+class Fish {   //(2,3 are depricated)
     ~Fish() {}
 };
 // gererate -> 1,2,3
