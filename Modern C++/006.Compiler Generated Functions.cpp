@@ -23,3 +23,17 @@ class Dog {} ; //not really empty some special finctions are there
  *  5. move constructor   (genereated only if 2,3,4,6 not decleard by user)
  *  6. move assignment operator (genereated only if 2,3,4,5 not decleard by user)
  */
+
+
+
+class Dog {
+   //C++ 03:
+   Dog();                        //default constructor
+   Dog(const Dog&);              //copy constructor
+   Dog& operator=(const Dog&);   //copy assignment operator
+   ~Dog();                       //destructor
+
+   //C++ 11:
+   Dog(Dog&&);                   //move constructor  
+   Dog& operator=(Dog&&);        //move assignment operator            
+};
