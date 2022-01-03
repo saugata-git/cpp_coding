@@ -37,3 +37,34 @@ class Dog {
    Dog(Dog&&);                   //move constructor  
    Dog& operator=(Dog&&);        //move assignment operator            
 };
+
+
+// example 0
+class Dog {}; 
+// gererate -> 1,2,3,4,5,6
+
+//example 1
+class Cat {
+    Cat(const Cat&) {} //copy constructor
+};
+// gererate -> 3,4
+
+//example 2
+class Duck {
+    Duck(Duck&&) {} //move constructor
+};
+// gererate -> 4
+
+
+class Frog {
+    Frog(Frog&& ,int=0) {} //move constructor  // gererate -> 4
+    Frog(int=0) {} //default constructor
+    Frog(const Frog&, int=0) {} //copy constuctor
+};
+
+class Fish {
+    ~Fish() {}
+};
+// gererate -> 1,2,3
+
+
