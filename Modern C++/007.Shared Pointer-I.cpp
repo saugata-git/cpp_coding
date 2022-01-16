@@ -30,7 +30,7 @@ void foo(){
   p->bark();   // p is dangling pointer  - undefined behaviour
 }
 
-// Teadious work -- resolution smart pointers
+// Tedious work -- resolution smart pointers
 
 
 
