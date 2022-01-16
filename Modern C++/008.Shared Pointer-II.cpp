@@ -83,6 +83,48 @@ void foo(){
 
 /********************************************************************************/
 
+#include <iostream>
+#include <string>
+#include <memory>  //smart pointer
+using namespace std;
+
+class Dog{
+   string name_;
+   public:
+      Dog(string name) {
+         cout << "Dog is created: " << name << endl;
+         name_ = name;
+      }
+      Dog() {
+         cout <<"Nameless dog created." <<endl;
+         name_ ="nameless";
+      }
+      ~Dog() { 
+         cout << "dog is destroyed: " << name_ <<endl;
+      }
+      void bark() {
+         cout << "Dog " << name_ <<" rules!" << endl;
+      }
+};
+
+void foo(){
+   shared_ptr<Dog> p1 = make_shared<Dog>("Tommy"); 
+   Dog* d = p1.get();  //returns raw pointer //avoid raw pointer
+
+   delete d; // when p1 goes out of scope Dog delete will be deleted again 
+   
+   shared_ptr<Dog> p2(d); //Dog will be deleted twice
+   
+   // doghouse.saveDog(d); // it will hold dangling pointer as its
+                           // already deleted
+} 
+
+
+int main(){
+   foo();
+   return 0;
+}
+
 
 
 
