@@ -27,7 +27,7 @@ void foo(){
   //......
   delete p;   //if commented memory leak
   //...
-  p->bark();   // p is dangling pointer  - undefined behavior
+  p->bark();   // p is dangling pointer  - undefined behaviour
 }
 
 // Teadious work -- resolution smart pointers
@@ -68,7 +68,7 @@ void foo(){
      p2->bark(); cout<< p.use_count() << endl;
   }
   //pointer_count = 1
-  p->bark();   // p is dangling pointer  - undefined behavior
+  p->bark();   // p is dangling pointer  - undefined behaviour
 } //pointer_count = 0;
 
 // Teadious work -- resolution smart pointers
@@ -80,7 +80,7 @@ int main(){
    //BAD Idea
    Dog* d = new Dog("Tommy");
    shared_ptr<Dog> p(d);  //p.use_count() = 1   //when p goes out of scope d get destroyed 
-   shared_ptr<Dog> p2(d); //p2.use_count() = 1  //when p2 goes out of scope d get destroyed  - which is undefiend  behavior
+   shared_ptr<Dog> p2(d); //p2.use_count() = 1  //when p2 goes out of scope d get destroyed  - which is undefiend  behaviour
    //An object should be assigned to a smart pointer as soon as it created. Raw pointer should not be used
    */
 
