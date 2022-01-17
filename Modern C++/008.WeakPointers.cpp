@@ -21,7 +21,7 @@ class Dog {
         void makeFriend( shared_ptr<Dog> f) { m_pFriend = f; }
 };
 
-//memory leaks - non of them get deleted after scope due to cyclinc reference 
+//memory leaks - non of them get deleted after scope due to cyclic reference 
 
 int main(){
 
