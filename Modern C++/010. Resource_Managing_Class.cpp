@@ -33,14 +33,34 @@ int main() {
 
 
 /******************************************************************************/
+// c++ 11 sol :  delete copy constuctor 
 
 
 
+class Person{
+public:
+   Person(std::string name) : pName(new std::string(name)) { } 
+   Person(const Person& ) = delete;     //deleted copy constuctor //it wont compile
+   ~Person() {delete pName; }
+   void printName() { std::cout << *pName; }
+private:
+  std::string* pName;
+};
+
+
+int main() {
+
+   std::deque<Person> persons;
+   persons.emplace_back("Aloe");  //constuct the object inplace (in the space allocated to the vector)
+   persons.front().printName(); 
+   
+   std::cout << " Goodbye " <<std::endl;
+
+}
 
 
 
-
-
+/**********************************************************/
 
 
 
