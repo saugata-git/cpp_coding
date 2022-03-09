@@ -182,7 +182,35 @@ int main(){
 
 
 
+/*---------------------------------------------------*/
 
+
+//Unique Pointers: can also be used as menber data
+
+class Dog{
+  // Bone* pB;
+  std::unique_ptr<Bone> pB;   //This prevents memory leak even constructor fails.
+public:
+   std::string m_name;
+   void bark() {
+      std::cout << "Dog " << m_name << " rules!" << std::endl;
+   }
+   Dog() {
+      pB = new Bone(); 
+      /* if excxption thrown pB will never be deleted thats why use unique_ptr  */
+
+      std::cout<< "Nameless dog created. " << std::endl;
+      m_name = "nameless";
+   }
+   Dog( std::string name){
+      std::cout<< "Dog is created: " << name << std::endl;
+      m_name = name;
+   }
+   ~Dog(){
+      delete pB;
+      std::cout << "Dog is destroyed : " << m_name << std::endl;
+   }
+};
 
 
 
