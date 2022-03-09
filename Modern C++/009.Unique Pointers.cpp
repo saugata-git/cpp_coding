@@ -50,7 +50,7 @@ void test(){
 
    std::unique_ptr<Dog> pD(new Dog("Tommy"));
    pD->bark();
-   Dog* p = pD.release();   // but did not destroy the function
+   Dog* p = pD.release();   // but did not destroy the object
    //gives you the raw pointer but if you use it auto-metic delete feature will be gone .
 
    if(!pD){
