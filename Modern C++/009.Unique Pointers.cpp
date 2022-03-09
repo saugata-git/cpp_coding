@@ -78,3 +78,64 @@ void test(){
 int main(){
    test();
 }
+
+/*-----------------------------------------------------------------*/
+/* Two unique_ptr can not share the same object */
+
+class Dog{
+
+public:
+   std::string m_name;
+   void bark() {
+      std::cout << "Dog " << m_name << " rules!" << std::endl;
+   }
+   Dog() {
+      std::cout<< "Nameless dog created. " << std::endl;
+      m_name = "nameless";
+   }
+   Dog( std::string name){
+      std::cout<< "Dog is created: " << name << std::endl;
+      m_name = name;
+   }
+   ~Dog(){
+      std::cout << "Dog is destroyed : " << m_name << std::endl;
+   }
+};
+
+
+
+void test(){
+   std::unique_ptr<Dog> pD(new Dog("Tommy"));
+   std::unique_ptr<Dog> pD2(new Dog("Aloe"));
+   pD2->bark();
+   pD2 = std::move(pD);
+        // 1. Aloe is destroyed.
+        // 2. pD becomes empty.
+        // 3. pD2 onws Aloe.
+   pD2->bark();
+}
+
+int main(){
+   test();
+}
+
+/*----------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
