@@ -60,7 +60,33 @@ int main() {
 
 /****************************************************************************/
 
+/**
+ * C++ 11 solution
+ * 
+ */
 
+
+class Person{
+public:
+   Person(std::string name) : pName(new std::string(name)) { } 
+  // ~Person() {delete pName; }
+   void printName() { std::cout << *pName; }
+private:
+  std::shared_ptr<std::string> pName;
+};
+
+
+int main() {
+
+   std::vector<Person> persons;
+ 
+   Person p("George");
+   persons.push_back(p);
+   persons.front().printName(); 
+   
+   std::cout << " Goodbye " <<std::endl;
+
+}
 
 
 
