@@ -124,6 +124,62 @@ int main(){
 
 
 
+#include <iostream>
+#include <string>
+#include <memory>  
+
+
+//Unique Pointers: exclusive ownership, light weight smart pointer.
+
+class Dog{
+
+public:
+   std::string m_name;
+   void bark() {
+      std::cout << "Dog " << m_name << " rules!" << std::endl;
+   }
+   Dog() {
+      std::cout<< "Nameless dog created. " << std::endl;
+      m_name = "nameless";
+   }
+   Dog( std::string name){
+      std::cout<< "Dog is created: " << name << std::endl;
+      m_name = name;
+   }
+   ~Dog(){
+      std::cout << "Dog is destroyed : " << m_name << std::endl;
+   }
+};
+
+/* Two unique_ptr can not share the same object */
+void f(std::unique_ptr<Dog> p){
+   p->bark();  
+   //dog will be destroyed inside this function
+   //owner ship transfer from pD to p
+}
+
+//unique_ptr is passed by value will move symantics
+std::unique_ptr<Dog> getDog() {
+   std::unique_ptr<Dog> p(new Dog("Aloe"));
+   return p;
+}
+
+
+void test(){
+   std::unique_ptr<Dog> pD(new Dog("Tommy"));
+   f(std::move(pD));
+   if(!pD){
+      std::cout <<"pD is empty. \n";
+   }
+   std::unique_ptr<Dog> pD2 = getDog();
+
+  // std::unique_ptr<Dog[]> dogs(new Dog[3]);
+}
+
+int main(){
+   test();
+}
+
 
 
 
