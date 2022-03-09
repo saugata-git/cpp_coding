@@ -89,7 +89,34 @@ int main() {
 }
 
 
+/***********************************************************/
+/**
+ * C++ 11 solution
+ * 
+ */
 
+
+class Person{
+public:
+   Person(std::string name) : pName(new std::string(name)) { } 
+  // ~Person() {delete pName; }
+   void printName() { std::cout << *pName; }
+private:
+  std::unique_ptr<std::string> pName;  //can't be copied only be moved
+};
+
+
+int main() {
+
+   std::vector<Person> persons;
+ 
+   Person p("George");
+   persons.push_back(std::move(p));
+   persons.front().printName(); 
+   
+   std::cout << " Goodbye " <<std::endl;
+
+}
 
 
 
