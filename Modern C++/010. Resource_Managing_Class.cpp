@@ -99,7 +99,7 @@ int main() {
 class Person{
 public:
    Person(std::string name) : pName(new std::string(name)) { } 
-  // ~Person() {delete pName; }
+  // ~Person() {delete pName; } // if we define it compiler will unable to generate move constructor
    void printName() { std::cout << *pName; }
 private:
   std::unique_ptr<std::string> pName;  //can't be copied only be moved
@@ -117,6 +117,6 @@ int main() {
    std::cout << " Goodbye " <<std::endl;
 
 }
-
+/***************************************************************************************/
 
 
