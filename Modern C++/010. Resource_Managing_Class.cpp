@@ -144,8 +144,14 @@ int main() {
 /*********************************************************************************/
 
 
+Summary:
 
-
+C++ 11 Sol:
+  1. keyword "delete" copy constuctor
+  2. emplace_back()
+  3. shared_ptr 
+  4. unique_ptr 
+  5. move
 
 
 
