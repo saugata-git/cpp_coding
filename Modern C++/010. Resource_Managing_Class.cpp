@@ -50,7 +50,7 @@ private:
 
 int main() {
 
-   std::deque<Person> persons;
+   std::deque<Person> persons;   //dont use vector as it always try to copy or move
    persons.emplace_back("Aloe");  //constuct the object inplace (in the space allocated to the vector)
    persons.front().printName(); 
    
