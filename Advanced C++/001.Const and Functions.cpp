@@ -27,3 +27,53 @@ int main() {
     std::cout<< i << std::endl;
     return 0;
 }
+
+
+
+/*****************************************************************************/
+
+#include <iostream>
+
+// const used with functions
+
+
+class Dog {
+    int age;
+    std::string name;
+public:
+    Dog() { 
+       age =3; 
+       name ="dummy";
+    }  
+    
+    // const parametes
+    void setAge(const int a){   //not very use ful as pass by value or copy although const
+        age = a;
+    } 
+    /*
+    void setAge(int a){   // overloading will not be diffentiated
+        age = a;
+    }
+    */    
+
+/*
+    // const return by value
+    const std::string getName() {    //const is useless return copy of name which is temporary
+        return name;
+    }
+*/
+    // const return reference
+    const std::string& getName() {    //improves effiecny and caller can not change the value
+        return name;
+    }
+
+};
+
+int main() {
+    Dog d;
+    const std::string& str= d.getName();
+    std::cout << str << std::endl; 
+    return 0;
+}
+
+
