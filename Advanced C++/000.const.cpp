@@ -32,3 +32,30 @@ int main() {
 
    return 0;
 }
+/*************************************************************************/
+
+#include <iostream>
+
+// const
+// -A compile time constraint that an oject can not be modified 
+
+
+int main() {
+    const int i = 9;
+    // i = 6; give u compile time error
+
+    const_cast<int&>(i) = 6;  //will chang i to 6 ...constness is gone
+    
+    int j = 10;
+    static_cast<const int&>(j);    // make j a const  modification is not allowed
+    //j++; give u compile time error
+
+   /*
+   Why use const
+      a.) Guard against inadvertent write to the variable.
+      b.) Self documenting.
+      c.) Enable compiler to do more optimization, making code tight
+      d.) const means the variable can be put in ROM. 
+   */
+    return 0;
+}
