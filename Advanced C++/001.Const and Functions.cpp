@@ -76,4 +76,50 @@ int main() {
     return 0;
 }
 
+/***************************************************************************/
+#include <iostream>
 
+// const used with functions
+
+
+class Dog {
+    int age;
+    std::string name;
+public:
+    Dog() { 
+       age =3; 
+       name ="dummy";
+    }  
+
+
+    const std::string& getName() {    //improves effiecny and caller can not change the value
+        return name;
+    }
+    
+   // const function
+   void printDogName() const {     
+       // this type of const means this function can not change any of the member vairable of this class
+       std::cout << "const  " << name << std::endl;
+       //age++;  // not allowed
+       //cant even call any other non cost function i.e calling getName() won't work.
+   }
+   
+    // const and with out const overloading is possible
+    void printDogName() {     
+       // this type of const means this function can not change any of the member vairable of this class
+       std::cout << "non - const  "<<  getName() << std::endl;
+       //age++;  // not allowed
+       //cant even call any other non cost function.
+    }
+
+};
+
+int main() {
+    Dog d;
+    d.printDogName(); 
+  
+    const Dog d2; 
+    d2.printDogName();
+
+    return 0;
+}
