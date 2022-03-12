@@ -106,10 +106,7 @@ public:
    
     // const and with out const overloading is possible
     void printDogName() {     
-       // this type of const means this function can not change any of the member vairable of this class
        std::cout << "non - const  "<<  getName() << std::endl;
-       //age++;  // not allowed
-       //cant even call any other non cost function.
     }
 
 };
