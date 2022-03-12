@@ -51,7 +51,7 @@ int main() {
     //j++; give u compile time error
 
    /*
-   Why use const
+   Why to use const
       a.) Guard against inadvertent write to the variable.
       b.) Self documenting.
       c.) Enable compiler to do more optimization, making code tight
