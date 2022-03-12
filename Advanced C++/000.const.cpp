@@ -1,7 +1,7 @@
 #include <iostream>
 
 // const
-// -A compile time constraint that an oject can not be modified 
+// -A compile time constraint that an object can not be modified 
 
 
 int main() {
@@ -37,7 +37,7 @@ int main() {
 #include <iostream>
 
 // const
-// -A compile time constraint that an oject can not be modified 
+// -A compile time constraint that an object can not be modified 
 
 
 int main() {
