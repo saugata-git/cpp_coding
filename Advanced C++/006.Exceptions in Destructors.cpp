@@ -91,5 +91,20 @@ int main() {
 }
 
 ??? This program will crash badly.... as two exceptions are pending at same time ...
+    
+/*------------------------------------------------------*/
+/*
+*  Solution 1 : Destructor swallow the exception.
+*/
+  ~dog() {
+      try {
+          //Enclose all the exception prone code here
+      } catch (int e) {
+          //Catch exception
+      } catch ( ... ) {
+          // will catch any other unknown exception
+      }
+  }
+    
 
 
