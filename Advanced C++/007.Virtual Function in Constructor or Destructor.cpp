@@ -59,7 +59,7 @@ public:
   Yellowdog() {
       cout << "Yellow dog born." <<endl;
   }
-  virtual void bark() {
+  virtual void bark() {              // dynamic binding
       cout << "I am a yellow dog" <<endl;
   }
 };
