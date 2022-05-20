@@ -27,6 +27,7 @@ class dog {
 
 /*****************************************************/
 /* solution */
+//solution 0
 class collar;
 class dog {
     collar* pCollar;
@@ -39,3 +40,22 @@ class dog {
         return *this;
     }
 };
+
+/******************************************************/
+//solution 1
+//Exception safe code
+/* Implemeting Assignment Operator */
+class collar;
+class dog {
+    collar* pCollar;
+    dog& operator=(const dog& rhs) {
+        if(this == &rhs){
+            return *this;
+        }
+        collar* pOrigCollar = pCollar;
+        pCollar = new collar(*rhs.pCollar); // what if *rhs.pCollar throws an exception
+        delete pOrigCollar;  
+        return *this;
+    }
+};
+
