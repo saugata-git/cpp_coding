@@ -71,3 +71,26 @@ Henry is destroyed.
 Henry is destroyed.
 */
 
+/*------------------------------------------------*/
+/* Example 2 : */
+
+
+class collar {
+    public:
+    collar(string collar){
+        std::cout<< "collar is born. \n";
+    }
+}
+
+class dog {
+     collar m_collar;
+};
+
+int main() {
+    dog dog1;
+}
+
+// as inside coller already a constuctor is there 
+// default constructpor can not generated there
+// so the deafult consatructor inside dog will not be genegrated 
+// code will not compile 
