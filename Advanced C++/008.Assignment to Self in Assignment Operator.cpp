@@ -25,4 +25,17 @@ class dog {
     }
 };
 
-
+/*****************************************************/
+/* solution */
+class collar;
+class dog {
+    collar* pCollar;
+    dog& operator=(const dog& rhs) {
+        if(this == &rhs){
+            return *this;
+        }
+        delete pCollar;  
+        pCollar = new collar(*rhs.pCollar);
+        return *this;
+    }
+};
