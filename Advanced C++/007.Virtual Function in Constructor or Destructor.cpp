@@ -80,7 +80,7 @@ I am a yellow dog.
 /*------------------------------------------------*/
 
 /*------------------------------------------------*/
-// Calling Virtual Functions in Constructor or Destructor 
+// Calling Virtual Functions in Constructor or Destructor  -- Avoid it
 
 class Dog {
 public:
