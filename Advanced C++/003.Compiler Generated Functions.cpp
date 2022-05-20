@@ -28,3 +28,46 @@ Note :
 1.They are public and inline.
 2.They are generated only if they are needed.
 */
+
+
+/*------------------------------------------------*/
+/*
+Example 1 : auto generated stuff by compiler
+   1. Copy Constructor.  - no 
+   2. Copy Assignmnet Operator. - yes
+   3. Destructor. - no
+   4. Default Constructor. -no
+*/
+
+
+class Dog {
+   public:
+    string m_name;
+    //string &m_name;   if we use this instead compiler will through 
+    //an error as it is not member by member copy 
+    //compiler gen Copy Assignmnet Operator cannot handel it
+    Dog(string name = "Bob"){
+        m_name = name;
+        cout << name << "is born." << endl;
+    }
+    ~Dog() {
+        cout<< m_name << "is destroyed.\n" << endl;
+    }
+
+};
+
+int main() {
+  Dog dog1("Henry");
+  Dog dog2;
+  dog2 = dog1;
+}
+
+
+/*
+OUTPUT :
+Henry  is born.
+Bob is born.
+Henry is destroyed.
+Henry is destroyed.
+*/
+
