@@ -23,3 +23,8 @@ class Dog {
        ~Dog() {...}; // 1. Call base class's destructor.
                      // 2. Call data members's destructor.
 };
+/*
+Note :
+1.They are public and inline.
+2.They are generated only if they are needed.
+*/
