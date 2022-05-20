@@ -59,3 +59,16 @@ class dog {
     }
 };
 
+
+/*-------------------------------------------------*/
+
+/*Solution 2 : Delegation */
+class dog {
+    collar* pCollar;
+    dog& operator=(const dog& rhs) {
+        *pCollar = *rhs.pCollar;   // member by member copying of collars or
+                                   // call collar's operator=  // may incure runtime cost
+        return *this;
+    }
+}
+
