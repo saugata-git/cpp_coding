@@ -65,7 +65,7 @@ class dog {
      }
      ~dog() {
         cout<< m_name << "is destroyed.\n" <<endl;
-        throw 20;
+        throw 20;   // We should not throw exception from a destructor
      }
 
      void bark() {
