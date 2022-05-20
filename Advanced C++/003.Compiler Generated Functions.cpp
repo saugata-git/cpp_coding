@@ -140,6 +140,11 @@ int main() {
 // code will compile not compile
 
 
-
-
-
+/*------------------------------------------------*/
+/*C++ 11 Update: */
+class dog {
+   public:
+       dog() = default;  // will give you control to generate  
+                         //compiler generated default constructor
+       dog(string name) {...};
+};
