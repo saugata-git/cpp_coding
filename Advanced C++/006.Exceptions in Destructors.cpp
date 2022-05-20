@@ -119,8 +119,7 @@ class dog {
         cout<< name << " is born." <<endl;
      }
      ~dog() {
-        cout<< m_name << "is destroyed.\n" <<endl;
-     
+        cout<< m_name << "is destroyed.\n" <<endl;   
      }
 
      void prepareToDestr() {
