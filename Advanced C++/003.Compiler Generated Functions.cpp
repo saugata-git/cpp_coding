@@ -115,3 +115,31 @@ int main() {
 }
 
 // code will compile 
+
+
+/*------------------------------------------------*/
+/* Example 3 : */
+
+
+class collar {
+    public:
+    collar(){
+        std::cout<< "collar is born. \n";
+    }
+}
+
+class dog {
+     collar m_collar; // data_member
+     string &m_name; // uninitialized reference 
+};
+
+int main() {
+    dog dog1;
+}
+
+// code will compile not compile
+
+
+
+
+
