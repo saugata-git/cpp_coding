@@ -49,7 +49,7 @@ Henry is destroyed.
 20 is caught.
 */
 
-/*------------------------------------------------*/
+
 
 /*------------------------------------------------*/
 
@@ -106,5 +106,50 @@ int main() {
       }
   }
     
+/*------------------------------------------------*/
+// this program will not crash  
+/*
+*  Solution 2 : Move the exception-prone code to a different function.
+*/
+class dog {
+    public:
+     string m_name;
+     dog(string  name) {
+        m_name = name;
+        cout<< name << " is born." <<endl;
+     }
+     ~dog() {
+        cout<< m_name << "is destroyed.\n" <<endl;
+     
+     }
 
+     void prepareToDestr() {
+         //...
+         throw 20;
+     }
+
+     void bark() {
+        //....
+     }
+     // ...
+};
+
+
+int main() {
+
+  try {
+      dog dog1("Henry");
+      dog dog2("Bob");
+      dog1.bark();
+      dog2.bark();
+       
+      dog1.prepareToDestr();
+      dog2.prepareToDestr();
+
+  } catch (int e) {
+      cout << e << " is caught" <<endl;
+  }
+   
+  return 0; 
+}
 
