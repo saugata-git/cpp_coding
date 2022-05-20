@@ -80,7 +80,7 @@ class collar {
     collar(string collar){
         std::cout<< "collar is born. \n";
     }
-}
+};
 
 class dog {
      collar m_collar;
@@ -94,3 +94,24 @@ int main() {
 // default constructpor can not generated there
 // so the deafult consatructor inside dog will not be genegrated 
 // code will not compile 
+
+
+/*------------------------------------------------*/
+/* Example 2 : */
+
+class collar {
+    public:
+    collar(){
+        std::cout<< "collar is born. \n";
+    }
+};
+
+class dog {
+     collar m_collar; //data_member
+};
+
+int main() {
+    dog dog1;
+}
+
+// code will compile 
