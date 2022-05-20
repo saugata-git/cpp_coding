@@ -3,7 +3,7 @@
 /*
 * Handle self-assignmnet in operator=
 *
-* Operator overload: exploite people's intuiton ans reduce their learning curve
+* Operator overload: exploite people's intuiton and reduce their learning curve
 */
 
 
